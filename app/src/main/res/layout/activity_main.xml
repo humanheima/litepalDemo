@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hm.litepaldemo.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_get_datebase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="得到数据库实例" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="存储数据" />
+
+            <Button
+                android:id="@+id/btn_upgrade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="升级表" />
+
+            <Button
+                android:id="@+id/btn_update_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="修改数据" />
+
+            <Button
+                android:id="@+id/btn_detele_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="删除数据" />
+
+            <Button
+                android:id="@+id/btn_query_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="查询数据" />
+
+            <Button
+                android:id="@+id/btn_multiple_database"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="多数据库" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
