@@ -1,8 +1,9 @@
 package com.hm.litepaldemo;
 
-import android.database.sqlite.SQLiteDatabase;
+import android.content.ContentValues;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
@@ -21,8 +22,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.btn_get_datebase)
-    Button btnGetDatebase;
+    private final String TAG = getClass().getSimpleName();
     @BindView(R.id.activity_main)
     RelativeLayout activityMain;
     @BindView(R.id.btn_save)
@@ -45,11 +45,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btn_get_datebase)
-    public void onClick() {
-        SQLiteDatabase db = LitePal.getDatabase();
-    }
-
     @OnClick(R.id.btn_save)
     public void saveDate() {
         Album album = new Album();
@@ -69,23 +64,12 @@ public class MainActivity extends AppCompatActivity {
         song2.save();
     }
 
-    /**
-     * 升级表 修改实体类，修改litepal.xml文件
-     */
-    @OnClick(R.id.btn_upgrade)
-    public void upgradeDateBase() {
-
-    }
-
     @OnClick(R.id.btn_update_data)
     public void updateData() {
-
-        /**
-         * 先找到对应的记录，然后使用save方法更新
-         */
-       /* Album album = DataSupport.where("name = ?", "album").findFirst(Album.class);
-        album.setName("human my dear");
-        album.save();*/
+        ContentValues values = new ContentValues();
+        values.put("price", 100F);
+        int rowEffected = DataSupport.updateAll(Album.class, values, "name = ?", "album");
+        Log.e(TAG, "rowEffected=" + rowEffected);
 
         /**
          * 使用update 方法
@@ -97,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
         /**
          * 使用 updateAll 方法
          */
-        Album album2 = new Album();
+       /* Album album2 = new Album();
         album2.setName("dumingwei");
-        album2.updateAll("name = ?", "human");
+        album2.updateAll("name = ?", "human");*/
     }
 
     @OnClick(R.id.btn_detele_data)

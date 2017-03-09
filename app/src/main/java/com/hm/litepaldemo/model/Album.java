@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2017/1/2.
+ * Created by dumingwei on 2017/1/2.
  */
 public class Album extends DataSupport {
 
     @Column(unique = true, defaultValue = "unknown")
     private String name;
 
-    @Column(ignore = true)
     private float price;
+    @Column(ignore = true)
     private byte[] cover;
     private Date releaseDate;
 

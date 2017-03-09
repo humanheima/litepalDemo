@@ -11,10 +11,13 @@ import org.litepal.LitePal;
  */
 public class App extends Application {
 
+
     @Override
     public void onCreate() {
         super.onCreate();
         LitePal.initialize(this);
         Stetho.initializeWithDefaults(this);
+        LitePal.getDatabase();
     }
+
 }

@@ -22,12 +22,6 @@
                 android:text="存储数据" />
 
             <Button
-                android:id="@+id/btn_upgrade"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="升级表" />
-
-            <Button
                 android:id="@+id/btn_update_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,13 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="查询数据" />
 
-            <Button
-                android:id="@+id/btn_multiple_database"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="多数据库" />
         </LinearLayout>
     </ScrollView>
-
 
 </RelativeLayout>
